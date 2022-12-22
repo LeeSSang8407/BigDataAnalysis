@@ -1,0 +1,240 @@
+# 파이썬의 데이터형
+# (1) 숫자형
+
+a = 10
+b = 5
+c = 3
+print(a+b, a-b,a*b,a/b) # 사칙연산
+print(a**c, a//c, a%c)
+
+# ** : 거듭제곱, 10 ** 3 = 10 x 10 x 10 
+# // : 나눗셈의 몫만 반환 
+# % : 나눗셈의 나머지만 반환
+
+# 문자열형
+a1 = "p1aa"
+a2 = "p2aa"
+a3 = a1 + a2
+
+print(a3)
+print(a1*3)
+
+# 문자열의 인덱싱과 슬라이싱
+# 문자열은 배열과 같이 인식되며, 인덱스를 이용해서 특정위치의 문자에 접근하는 것도 가능하다.
+# a1[0]. a1[2], a[0:4], a2[5:9] 같은 형식으로 필요한 문자열을 잘라내는게 가능하다. 
+
+# 문자열 포멧팅
+
+# 문자열 안의 특정한 값을 바꿔야 할 경우 사용하는 기법이다.
+
+print("오늘은 %d일입니다." %13)
+print("오늘은 %s요일입니다." %"수요일")
+print("지금 온도는 %f도입니다." %32.7)
+print("지금 온도는 %0.2f도입니다." %32.7)
+
+'''
+문자열의 포멧코드
+%s : 문자열
+%c : 단일문자 (Character)
+%d : 정수(integer)
+%f : 실수(floating-point)
+%o : 8진수
+%x : 16진수
+
+# 문자열 내장함수
+# 문자열 자료형이 자체적으로 가지고 있는 내장합수로 문자열 뒤에 마침표를 붙인 다음 함수이름을 적는다.
+
+# count() : 문자열내의 특정 문자 개수 세기 
+
+Data = "python programming"
+Data.count("p")
+# 답은 2
+
+# join() : 문자열 삽입
+"/".join("python programming")
+
+# find() : 찾는 문자열이 처음 나온 위치를 반환
+Data.find("m")
+
+# upper() : 소문자를 대문자로 변환
+# lower() : 대문자를 소문자로 변환
+
+print(Data.upper())
+print(Data.lower())
+
+# replace() : 문자열내의 특정값을 다른값으로 치환
+Data.replace("python","JAVA")
+
+# split() 공백 또는 특정 문자를 구분자로 문자열 분리
+
+Data = "python programming"
+Data.split() # 공백 기준 
+
+# 연산자 : *, /, //, %, **
+# 비교(관계 연산자)
+# >, >=, =<. ==, != 
+
+# 논리 연산자 
+# and : a and b, a 와 b 모두가 True 일때 True
+# or: 논리합 a or b # a,b 둘 중 하나가 True 일때 True
+# not : 논리 부정. not a : a가 True 일때 False. a가 False 일때 True
+
+# 복합대입연산자
++= : a+=10 : a = a+10
+-= : a-=10 : a = a-10
+*= : a*=10 : a = a * 10
+/= : a/=10 : a = a/10
+        
+# 연산자 우선순위 
+() > ** > +.-(부호) > *,/,//,% > +,- > 관계연산자 > not > and > or 
+
+# 조건문 
+
+a = 10
+if (a > 10):
+    print("a는 10보다 큰 정수입니다")
+    
+# 조건문은 2칸이던 4칸이던 들여쓰기 자체는 상관없으나 한 번 들여쓰기가 되면 형식이 동일해야함
+
+# if ~ else
+
+a = -10 
+
+if (a>0):
+    print("a는 %d입니다." %a)
+    print("a는 양의 정수입니다.")
+
+else : 
+    print("a는 %d입니다." %a)
+    print("a는 음의 정수입니다")
+    
+a = -10
+if (a>0) :
+    print("a는 양의 정수입니다.")
+elif (a==0):
+    print("a는 0입니다.")
+else :
+    print("a는 음의 정수입니다.")
+    
+# 반복문 : 프로그램의 일부코드를 반복해서 사용
+
+for i in range(5):
+    print("python programming")
+    
+sum = 0
+
+for i in range(1,6):
+    sum = sum + i
+    print(i,sum)
+
+for i in range(1,10,2):
+    sum = sum + i
+    print(i,sum)
+    
+for x in "python":
+    print(x)
+    
+i = 1
+while i <= 5: 
+    print("python programming")
+    i = i + 1
+    
+# 리스트, 튜플, 딕셔너리 
+
+# 리스트
+# JAVA나 C의 배열과 유사한 개염이며 for, while 과 같은 반복문에서 궁합이 좋음
+# [] 감싸고 각 엘리멘트는 쉼표로 표현
+
+
+a = [1,2,3]
+b = [4,5,6]
+
+print (a+b)
+print (a*3)
+
+# 리스트의 원소 추가
+# append() 함수는 리스트의 마지막에 원소를 추가함
+# insert() 함수는 특정 인덱스에 원소를 추가함
+
+a = ['a','b','c']
+
+a.append('d')
+print(a)
+
+a.insert(1,'aa')
+print(a)
+
+# 지정된 장소의 원소삭제 : del 사용
+
+del a[1]
+print(a)
+
+# 기타 리스트 관련 함수
+index() : 원소 x가 위치한 인덱스 값 반환
+sort() : 리스트의 원소를 순서대로 정렬
+reverse() : 리스트의 원소를 역순으로 정렬
+count(x) : 리스트에 포함된 x값 데이터의 개수를 반환
+remove(x) : 리스트에서 첫번째로 나온 x값 데이터를 삭제
+
+a = ['a','b','c','d','e']
+a.reverse()
+print(a)
+print(a.index('b'))
+a.sort()
+print(a)
+print(a.index('b'))
+
+a = [10,20,30,40,30,20,50]
+print(a.count(30))
+a.remove(30)
+print(a)
+
+a = ['a','b','c']
+for x in a:
+    print(x,end='')
+    
+# 2차원 리스트 : 리스트의 각 원소가 리스트 형태인 경우
+
+scores = [[70,85],[80,90],[100,90],[95,85],[82,92]]
+
+print(scores)
+
+scores = [[70,85],[80,90],[100,90],[95,85],[82,92]]
+
+type(scores)
+
+# 튜플과 딕셔너리 
+
+# 튜플은 값의 변경이 불가능하다. 
+# 딕셔너리는 대응관계를 표현하며 키와 값을 한쌍으로 갖는다. 
+
+t = ('a','b','c','d','e')
+print(t[0])
+print(t[2:])
+print(t * 2)
+print(len(t))
+
+# 딕셔너리의 사용
+
+dic1 = {'1':'a','2':'b','3':'c'}
+dic2 = {'name':'python','age':'30','job':'programming'}
+
+dic1[5] = 'f'
+dic1
+
+dic2['contact'] = 'python.org'
+print(dic2)
+
+# 딕셔너리 관련 함수
+
+dic1 = {'1':'a','2':'b','3':'c'}
+dic2 = {'name':'python','age':'30','job':'programming'}
+
+print(dic1.keys())
+print(dic2.values())
+print(dic1.items())
+
+if 'age' in dic2:
+    print(dic2.get('age'))
+    
+# dic.get() : key에 해당하는 Value를 반환
